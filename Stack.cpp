@@ -81,4 +81,12 @@ ostream& operator<<(ostream& os, const Stack<T>& s){
     }
     return os;
 }
-    
+
+template<typename T>
+ostream& operator<<(ostream& os, const Stack<T>& s){
+        if (s._isEmpty) throw;
+        for (size_t i = 0; i < s._top; i++){
+            os << s._array[i] << " ";
+        }
+        return os;
+}

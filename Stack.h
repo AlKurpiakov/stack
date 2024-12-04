@@ -29,11 +29,5 @@ public:
     const T Top() const;
     
     
-    friend ostream& operator<<(ostream& os, const Stack& s){
-        if (s._isEmpty) throw;
-        for (size_t i = 0; i < s._top; i++){
-            os << s._array[i] << " ";
-        }
-        return os;
-    }
+    friend ostream& operator<<(ostream& os, const Stack& s);
 };
