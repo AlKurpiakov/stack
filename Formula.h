@@ -1,19 +1,24 @@
 #pragma once
+#include <string.h>
 #include "Stack.h"
-
+#include "Table.h"
 
 const int MaxLength = 25;
 
 class Formula {
 private:
-    char Formula[MaxLength];
-    char PostfixForm[MaxLength];
-    size_t len_of_postfixform;
-    size_t len_of_form;
-    
+    string _expr;
+    string _postfix;
+    Stack<char> _stack;
+    Table <char,int> _prior;
 public:
-    //TFTrans (char form[]);
-    int FormulaCheckek (string exp);
-    int FormulaConverter(void);
-    double FormulaCalculator (); 
+    Formula(string exp);
+    void BuildPostfix();
+    double Calculate();
 };
+
+
+
+
+
+

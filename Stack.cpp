@@ -81,6 +81,10 @@ ostream& operator<<(ostream& os, const Stack<T>& s){
     }
     return os;
 }
+template<typename T>
+size_t Stack<T>::GetSize(){
+    return _top;
+}
 
 template<typename T>
 ostream& operator<<(ostream& os, const Stack<T>& s){
