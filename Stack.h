@@ -28,7 +28,7 @@ public:
     const T Pop();
     const T Top() const;
     
-    
+    void Revers();
     size_t GetSize();
     friend ostream& operator<<(ostream& os, const Stack& s);
 };

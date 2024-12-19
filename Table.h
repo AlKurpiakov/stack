@@ -14,12 +14,12 @@ private:
     optional<T2>* _col2;
     size_t _count;
 public:
-    Table(string s1, string s2,size_t size=20){
+    Table(string s1, string s2,size_t size){
         _title_col1=s1;
         _title_col2=s2;
         _table_size=size;
-        _col1=new std::optional<T1>[_table_size];
-        _col2=new std::optional<T2>[_table_size];
+        _col1=new optional<T1>[_table_size];
+        _col2=new optional<T2>[_table_size];
         _count =0;
 
     }
@@ -30,6 +30,13 @@ public:
 
     }
 
+    T2 GetElemFromCol2(size_t str){
+        return _col2[str];
+    }
+
+    T1 GetElemFromCol1(size_t str){
+        return _col1[str];
+    }
     void Print(){
         os<<"|"<<setw(5)<<t._title_col1<<" | "<<setw(5)<<t._title_col2<<"|"<<endl;
         for (size_t i=0;i<15;i++){

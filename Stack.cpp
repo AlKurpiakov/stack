@@ -58,7 +58,7 @@ void Stack<T>::Push(const T& elem){
 
 template<typename T>
 const T Stack<T>::Pop(){
-    if (_isEmpty) return nullptr;
+    if (_isEmpty) throw "bebrachka";
     if (_top == 0) {
         _isEmpty = true;
         return _array[_top];
@@ -69,7 +69,7 @@ const T Stack<T>::Pop(){
 
 template<typename T>
 const T Stack<T>::Top() const{
-    if (_isEmpty) throw ;
+    if (_isEmpty) throw "bebrachka";
     return _array[_top];
 }
 
@@ -86,6 +86,15 @@ size_t Stack<T>::GetSize(){
     return _top;
 }
 
+template<typename T>
+void Stack<T>::Revers(){
+    T* arr;
+    arr = new T[_size];
+    for (int i = 0; i < _top; i++){
+        arr[i] = _arr[top - i];
+    }
+    _arr = arr;
+}
 template<typename T>
 ostream& operator<<(ostream& os, const Stack<T>& s){
         if (s._isEmpty) throw;
