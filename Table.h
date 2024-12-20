@@ -30,39 +30,39 @@ public:
 
     }
 
-    T2 GetElemFromCol2(size_t str){
-        return _col2[str];
+    T2 GetElemFromCol2(size_t row){
+        return _col2[row].value();
     }
 
-    T1 GetElemFromCol1(size_t str){
-        return _col1[str];
+    T1 GetElemFromCol1(size_t row){
+        return _col2[row].value();
     }
+
     void Print(){
-        os<<"|"<<setw(5)<<t._title_col1<<" | "<<setw(5)<<t._title_col2<<"|"<<endl;
+        cout <<"|"<<setw(5)<< this->_title_col1<<" | "<<setw(5)<<this->_title_col2<<"|"<<endl;
         for (size_t i=0;i<15;i++){
             cout<<"-";
         }
         cout<<endl;
         
-        for(size_t i=0; i<t._count;i++){
-            if(t._col1[i]==nullopt){
-                os<<setw(5)<<"no";
+        for(size_t i=0; i<this->_count;i++){
+            if(this->_col1[i]==nullopt){
+                cout<<setw(5)<<"no";
             }
             else
-            os<<setw(5)<<t._col1[i].value();
-            os<<"|";
-            if(t._col2[i]==nullopt){
-                os<<setw(5)<<"no";
+            cout<<setw(5)<<this->_col1[i].value();
+            cout<<"|";
+            if(this->_col2[i]==nullopt){
+                cout<<setw(5)<<"no";
             }
             else
-            os<<setw(5)<<t._col2[i].value();
+            cout<<setw(5)<<this->_col2[i].value();
             cout<<endl;
 
         }
          for (size_t i=0;i<15;i++){
             cout<<"-";
         }
-        return os;
     }
 
 };

@@ -4,4 +4,4 @@ project(Stack
         LANGUAGES CXX)
 
 
-add_executable(stack Stack.cpp main.cpp Formula.cpp ExpressionChecker.cpp)
+add_executable(stack main.cpp Formula.cpp ExpressionChecker.cpp)

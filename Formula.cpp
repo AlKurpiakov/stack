@@ -1,4 +1,3 @@
-#pragma once
 #include "Formula.h"
 
 Formula::Formula(string exp, size_t num_of_un) : _prior("sign", "prior", 6) , _unknow("u", "n", num_of_un){

@@ -1,4 +1,3 @@
-#pragma once
 #include "ExpressionChecker.h"
 #include "Table.h"
 #include <optional>
