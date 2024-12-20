@@ -30,12 +30,20 @@ public:
 
     }
 
-    T2 GetElemFromCol2(size_t row){
-        return _col2[row].value();
+    T2 GetElemFromCol2(T1 row){
+        size_t j = 0;
+        while(row != _col1[j].value()){
+            j++;
+        }
+        return _col2[j].value();
     }
 
-    T1 GetElemFromCol1(size_t row){
-        return _col2[row].value();
+    T1 GetElemFromCol1(T2 row){
+        size_t j = 0;
+        while(row != _col2[j].value()){
+            j++;
+        }
+        return _col1[j].value();
     }
 
     void Print(){

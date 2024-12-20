@@ -11,6 +11,7 @@ private:
     string _expr;
     string _postfix;
     Stack<char> _opStack;
+    Stack<double> _stack;
     Table<char,int> _prior;
     Table<char, double> _unknow;
     set<char> _set;
@@ -18,7 +19,7 @@ private:
 
 public:
     Formula(string exp, size_t num_of_un);
-    void FormulaConverter(size_t num_of_un);
+    void FormulaConverter();
     double FormulaCalculator();
 };
 

@@ -10,6 +10,7 @@ private:
     Stack<int> _misBrac;
 
 public:
+    ExpressionChecker(string exp, int un);
     bool CheckBrackets(const string& s);
     bool CheckFormula(const string& s);
     void PrintMistakes(const string& s);

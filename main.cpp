@@ -1,7 +1,9 @@
-#include "Stack.h"
+#include "Formula.h"
 
 int main(){
-    Stack<int> s(10);
-    cout << s.Pop();
-    return 1;
+    Formula exp("(1+1)", 0);
+    exp.FormulaConverter();
+    double result = exp.FormulaCalculator();
+
+    
 }

@@ -8,6 +8,8 @@ bool IsDig(char dig){
 }
 
 
+ExpressionChecker::ExpressionChecker(string exp, int un):_valTab("let", "num", un), _bracketTab("(" , ")", exp.size()){}
+
 
 bool ExpressionChecker::CheckBrackets (const string& s){
     Stack<int> bracketStack;
@@ -55,13 +57,16 @@ bool ExpressionChecker::CheckFormula(const string& s){
 
 
 void ExpressionChecker::PrintMistakes(const string& s){
-    string mask;
-    for (int i = 0; i < s.size(); i++){
-        if ( i == _misArithm.Top()) mask += '^';
-        else if ( i == _misBrac.Top()) mask += '^';
-        else mask += '-';
+    if (!_misArithm.isEmpty() || !_misBrac.isEmpty()){
+        string mask;
+        for (int i = 0; i < s.size(); i++){
+            if (!_misArithm.isEmpty() && i == _misArithm.Top()) mask += '^';
+            else if ( !_misBrac.isEmpty() && i == _misBrac.Top()) mask += '^';
+            else mask += '-';
+        }
+        cout << endl << s << endl;
+        cout << mask << endl;
     }
-    cout << endl << s << endl;
-    cout << mask << endl;
+    else { cout << "no mistakes"<< endl;}
 
 }
